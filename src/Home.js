@@ -44,7 +44,9 @@ const Home = () => {
             { !s_screen && (
                     <div className="home">
                         <div className="img-container">
-                            <img className="img" src={logo} alt=''/>
+                            <a href="https://youtu.be/QJJYpsA5tv8">
+                                <img className="img" src={logo} alt=''/>
+                            </a>
                         </div>
                         <div className="text">
                             <p className="quote">
@@ -59,7 +61,9 @@ const Home = () => {
 
             { s_screen && (
                     <div className="s_home">
-                        <img className="s_img" src={logo} alt=''/>
+                        <a href="https://youtu.be/QJJYpsA5tv8">
+                            <img className="s_img" src={logo} alt=''/>
+                        </a>
                         <div className="s_text">
                             <p className="quote">
                                 {quotes[idx].quote}
