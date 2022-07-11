@@ -20,6 +20,8 @@
 * {
   font-family: 'Quicksand', sans-serif;
   font-size: 20px;
+  background-color: var(--bg0);
+  color: var(--fg0);
 }
 
 .App {
@@ -45,6 +47,7 @@
 .author {
   font-size: .9rem;
   font-style: italic;
+  color: var(--fg2);
 }
 
 .home {
@@ -74,6 +77,10 @@
   border: 2px solid red;
 }
 
+
+
+/*~~~~~~~~~@media queries~~~~~~~~~*/
+
 .s_img {
   width: 100%;
   margin: 0 auto;
@@ -85,4 +92,11 @@
   flex-direction: column;
   max-width: 75%;
   margin: 0 auto;
+}
+
+.s_text {
+  padding: 1rem;
+  align-content: center;
+  justify-content: center;
+  flex: 1;
 }

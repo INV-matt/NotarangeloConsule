@@ -31,6 +31,10 @@ const Home = () => {
             quote: "“Arriva il momento in cui bisogna scegliere tra ciò che è facile e ciò che è giusto.”",
             author: "Albus Percival Wulfric Brian Silente",
         },
+        {
+            quote: "“Scegli il meglio, scegli E-CAMPUS. Ti aspecto!”",
+            author: "Cristiano “THE SIUUUUU” Ronaldo",
+        },
         
     ]
     const idx = Math.floor(Math.random() * quotes.length);
@@ -42,7 +46,7 @@ const Home = () => {
                         <div className="img-container">
                             <img className="img" src={logo} alt=''/>
                         </div>
-                        <div className="text debug">
+                        <div className="text">
                             <p className="quote">
                                 {quotes[idx].quote}
                             </p>
@@ -56,7 +60,7 @@ const Home = () => {
             { s_screen && (
                     <div className="s_home">
                         <img className="s_img" src={logo} alt=''/>
-                        <div className="text debug">
+                        <div className="s_text">
                             <p className="quote">
                                 {quotes[idx].quote}
                             </p>
