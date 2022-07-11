@@ -6,13 +6,13 @@ const Home = () => {
 
     // @media queries
     const [s_screen, setS_screen] = useState(
-        window.matchMedia("(min-width: 768px)").matches
+        window.matchMedia("(max-width: 768px)").matches
       );
 
       
     useEffect(() => {
         window
-        .matchMedia("(min-width: 768px)")
+        .matchMedia("(max-width: 768px)")
         .addEventListener('change', e => setS_screen( e.matches ));
     }, []);
         
@@ -37,9 +37,11 @@ const Home = () => {
 
     return (
         <div>
-            { s_screen && (
+            { !s_screen && (
                     <div className="home">
-                        <img className="img" src={logo} alt=''/>
+                        <div className="img-container">
+                            <img className="img" src={logo} alt=''/>
+                        </div>
                         <div className="text debug">
                             <p className="quote">
                                 {quotes[idx].quote}
@@ -51,7 +53,7 @@ const Home = () => {
                 )
             }
 
-            { !s_screen && (
+            { s_screen && (
                     <div className="s_home">
                         <img className="s_img" src={logo} alt=''/>
                         <div className="text debug">

@@ -54,9 +54,13 @@
   margin: 0 auto;
 }
 
-.img {
+.img-container {
   margin-right: 2rem;
   width: 40%;
+}
+
+.img {
+  width: 100%;
 }
 
 .text {
