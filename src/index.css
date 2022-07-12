@@ -7,7 +7,7 @@
   --fg0: #fbf1c7;
   --fg1: #ebdbb2;
   --fg2: #d5c4a1;
-
+  
   --red: #fb4934;
   --green: #b8bb26;
   --yellow: #fabd2f;
@@ -15,6 +15,10 @@
   --purple: #d3869b;
   --aqua: #8ec07c;
   --orange: #fe8019;
+}
+
+.debug {
+  border: 2px solid red;
 }
 
 * {
@@ -40,12 +44,12 @@
 }
 
 .quote {
-  font-size: 1.1rem;
-  margin-bottom: 2rem;
+  font-size: 1.5em;
+  margin-bottom: 2em;
 }
 
 .author {
-  font-size: .9rem;
+  font-size: .9em;
   font-style: italic;
   color: var(--fg2);
 }
@@ -58,7 +62,7 @@
 }
 
 .img-container {
-  margin-right: 2rem;
+  margin-right: 2em;
   width: 40%;
 }
 
@@ -67,16 +71,17 @@
 }
 
 .text {
-  padding: 5rem 1rem;
+  padding: 5em 1em;
   align-content: center;
   justify-content: center;
   flex: 1;
 }
 
-.debug {
-  border: 2px solid red;
+.sign {
+  text-align: right;
+  margin-top: 2em;
+  font-style: italic;
 }
-
 
 
 /*~~~~~~~~~@media queries~~~~~~~~~*/
@@ -84,7 +89,7 @@
 .s_img {
   width: 100%;
   margin: 0 auto;
-  margin-bottom: 2rem;
+  margin-bottom: 2em;
 }
 
 .s_home {
@@ -95,8 +100,46 @@
 }
 
 .s_text {
-  padding: 1rem;
+  padding: 1em;
   align-content: center;
   justify-content: center;
   flex: 1;
+}
+
+
+
+.l_text {
+  align-content: center;
+  justify-content: center;
+  flex: 1;
+  font-size: 0.7em;
+}
+
+.l_img {
+  width: 100%;
+  margin: 0 auto;
+  margin-bottom: 0;
+}
+
+
+
+
+/*~~~~~FOOTER~~~~~*/
+.footer {
+  background-color: var(--bg1);
+  width: 100%;
+  padding: 2em;
+  color: var(--fg1);
+
+  position: fixed;
+  left: 0;
+  bottom: 0;
+
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.footer-btn {
+  background-color: transparent;
 }

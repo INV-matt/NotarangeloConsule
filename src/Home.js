@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from 'react';
-
 import logo from "./imgs/dike_blk_bg.png"
 
 const Home = () => {
@@ -16,15 +15,15 @@ const Home = () => {
         .addEventListener('change', e => setS_screen( e.matches ));
     }, []);
         
-    /*const [m_screen, setM_screen] = useState(
-            window.matchMedia("(min-width: 768px)").matches
+    const [low_screen, setLow_screen] = useState(
+            window.matchMedia("(max-height: 850px)").matches
         );
 
     useEffect(() => {
         window
-        .matchMedia("(min-width: 768px)")
-        .addEventListener('change', e => setS_screen( e.matches ));
-    }, []);*/
+        .matchMedia("(max-height: 850px)")
+        .addEventListener('change', e => setLow_screen( e.matches ));
+    }, []);
 
     const quotes = [
         {
@@ -53,13 +52,13 @@ const Home = () => {
                                 {quotes[idx].quote}
                             </p>
                             <p className="author">{quotes[idx].author}</p>
-
+                            <p className='sign'>Michele Ferdinando Notarangelo, candidato rappresentante di classe</p>
                         </div>
                     </div>
                 )
             }
 
-            { s_screen && (
+            { s_screen && !low_screen && (
                     <div className="s_home">
                         <a href="https://youtu.be/QJJYpsA5tv8">
                             <img className="s_img" src={logo} alt=''/>
@@ -69,7 +68,24 @@ const Home = () => {
                                 {quotes[idx].quote}
                             </p>
                             <p className="author">{quotes[idx].author}</p>
+                            <p className='sign'>Michele Ferdinando Notarangelo, candidato rappresentante di classe</p>
+                        </div>
+                    </div>
+                )
+            }
 
+            {
+                s_screen && low_screen && (
+                    <div className="s_home">
+                        <a href="https://youtu.be/QJJYpsA5tv8">
+                            <img className="l_img" src={logo} alt=''/>
+                        </a>
+                        <div className="l_text">
+                            <p className="quote">
+                                {quotes[idx].quote}
+                            </p>
+                            <p className="author">{quotes[idx].author}</p>
+                            <p className='sign'>Michele Ferdinando Notarangelo, candidato rappresentante di classe</p>
                         </div>
                     </div>
                 )
