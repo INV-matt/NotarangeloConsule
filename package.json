@@ -16,7 +16,8 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "github": "git add . && git commit -m latest && git push -u origin main"
+    "github": "git add . && git commit -m latest && git push -u origin main",
+    "all": "npm run build && firebase deploy && npm run github"
   },
   "eslintConfig": {
     "extends": [
