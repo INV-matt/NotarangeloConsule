@@ -1,4 +1,6 @@
-const Header = () => {
+import logo from "../imgs/logo.png"
+
+const Header = ({s_screen}) => {
     /*~~~~~THEME SELECTOR~~~~~*/
     var b = document.body;
     const currentTheme = localStorage.getItem('currentTheme');
@@ -19,7 +21,10 @@ const Header = () => {
     return (
         <header className="header">
             <nav className="navbar">
-                <p className="logo">NotaForPresident</p>
+                <div className="brand">
+                    <img className="logo" src={logo} alt=""></img>
+                    { !s_screen && (<p className="name">NotaForPresident</p>)}                    
+                </div>
                 <button className="theme-switch" onClick={ToggleTheme}>
                     <i className="ri-sun-line sun-icon"></i>
                     <i className="ri-moon-line moon-icon"></i>

@@ -1,19 +1,8 @@
-import React, { useState, useEffect } from 'react';
 import logo from "./imgs/dike_blk_bg.png"
 
-const Home = () => {
+const Home = ({s_screen}) => {
 
-    // @media queries
-    const [s_screen, setS_screen] = useState(
-        window.matchMedia("(max-width: 768px)").matches
-      );
 
-      
-    useEffect(() => {
-        window
-        .matchMedia("(max-width: 768px)")
-        .addEventListener('change', e => setS_screen( e.matches ));
-    }, []);
         
     /*const [low_screen, setLow_screen] = useState(
             window.matchMedia("(max-height: 850px)").matches
@@ -66,6 +55,10 @@ const Home = () => {
             quote: "“La scienza che si discosta dalla giustizia, più che scienza deve chiamarsi astuzia.”",
             author: "Marco Tullio Cicerone",
         },
+        {
+            quote: "“Time to conquer west Russia”",
+            author: "Putin, probably",
+        },
         /*{
             quote: "“”",
             author: "",
@@ -74,8 +67,6 @@ const Home = () => {
     const idx = Math.floor(Math.random() * quotes.length);
 
 
-
-    
 
     return (
         <div>
