@@ -40,7 +40,7 @@ const Home = ({s_screen}) => {
             author: "Napoleon Hill",
         },
         {
-            quote: "“Non si fa il proprio dovere perché qualcuno ci dica grazie, lo si fa per principio, per se stessi, per la propria dinità.”",
+            quote: "“Non si fa il proprio dovere perché qualcuno ci dica grazie, lo si fa per principio, per se stessi, per la propria dignità.”",
             author: "Oriana Fallaci",
         },
         {
@@ -58,6 +58,10 @@ const Home = ({s_screen}) => {
         {
             quote: "“Time to conquer west Russia”",
             author: "Putin, probably",
+        },
+        {
+            quote: "I'm never going to give you up, never going to let you down, never going to run around and desert you, never going to make you cry, never going to say goodbye, never going to tell a lie and hurt you”",
+            author: "Rick Astley",
         },
         /*{
             quote: "“”",
