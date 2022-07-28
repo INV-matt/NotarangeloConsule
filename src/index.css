@@ -1,5 +1,15 @@
 @import url('https://fonts.googleapis.com/css2?family=Edu+TAS+Beginner:wght@400;500;600;700&family=JetBrains+Mono:wght@300;400;500;600;700&family=Quicksand:wght@300;400;500;600;700&display=swap');
 
+@font-face {
+  font-family: 'JetBrainsMono Nerd';
+  src: url('./fonts/JetBrains\ Mono\ Regular\ Nerd\ Font\ Complete\ Mono.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+.nerd-icons {
+  font-family: 'JetBrainsMono Nerd';
+}
+
 :root {
   --bg0: #282828;
   --bg1: #3c3836;
@@ -36,8 +46,6 @@ body {
   transition: background-color .25s, color .25s;
 }
 
-
-
 button {
   cursor: pointer;
   border: none;
@@ -72,6 +80,7 @@ button {
 }
 
 .brand {
+  text-decoration: none;
   width: 28%;
   display: flex;
   flex-direction: row;
@@ -84,7 +93,7 @@ button {
 }
 
 .name {
-  font-size: 2rem;
+  font-size: 2em;
 }
 
 .content {
@@ -173,6 +182,38 @@ button {
   margin: 0 auto;
   margin-bottom: 0;
 }*/
+
+/*~~~~~ABOUT~~~~~*/
+.about {
+  display: flex;
+  flex-direction: row;
+  padding: 1rem;
+  justify-content: center;
+  align-items: center;
+}
+
+.abt-profile {
+  margin: 2rem;
+}
+
+.abt-profile .name {
+  text-align: center;
+  font-size: 32px;
+}
+
+.abt-links a {
+  font-size: 100px;
+  margin: 0 2rem;
+  text-decoration: none;
+}
+
+.fl-dr-column {
+  flex-direction: column;
+}
+
+.s_about {
+  font-size: 80%;
+}
 
 
 /*~~~~~LIGHT MODE~~~~~*/

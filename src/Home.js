@@ -61,7 +61,7 @@ const Home = ({s_screen}) => {
         },
         {
             quote: "I'm never going to give you up, never going to let you down, never going to run around and desert you, never going to make you cry, never going to say goodbye, never going to tell a lie and hurt you”",
-            author: "Rick Astley",
+            author: "Rick Astley<",
         },
         /*{
             quote: "“”",

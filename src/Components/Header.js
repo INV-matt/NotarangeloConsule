@@ -1,4 +1,5 @@
 import logo from "../imgs/logo.png"
+import { Link } from 'react-router-dom';
 
 const Header = ({s_screen}) => {
     /*~~~~~THEME SELECTOR~~~~~*/
@@ -21,14 +22,15 @@ const Header = ({s_screen}) => {
     return (
         <header className="header">
             <nav className="navbar">
-                <div className="brand">
-                    <img className="logo" src={logo} alt=""></img>
-                    { !s_screen && (<p className="name">NotaForPresident</p>)}                    
-                </div>
+                <Link to="/about" className="brand">
+                        <img className="logo" src={logo} alt=""></img>
+                        { !s_screen && (<p className="name">NotaForPresident</p>)}
+                </Link>
                 <button className="theme-switch" onClick={ToggleTheme}>
                     <i className="ri-sun-line sun-icon"></i>
                     <i className="ri-moon-line moon-icon"></i>
                 </button>
+
             </nav>
         </header>
     );
