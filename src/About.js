@@ -1,7 +1,7 @@
-const About = ({s_screen}) => {
+const About = ({ s_screen }) => {
     return (
         <div>
-            { !s_screen && (
+            {!s_screen && (
                 <div className="about">
 
                     <div className="abt-profile">
@@ -24,7 +24,7 @@ const About = ({s_screen}) => {
 
                 </div>
             )}
-            { s_screen && (
+            {s_screen && (
                 <div className="about s_about fl-dr-column">
 
                     <div className="abt-profile">
@@ -50,5 +50,5 @@ const About = ({s_screen}) => {
         </div>
     );
 }
- 
+
 export default About;
