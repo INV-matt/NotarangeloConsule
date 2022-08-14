@@ -8,6 +8,7 @@
 }
 .nerd-icons {
   font-family: 'JetBrainsMono Nerd';
+  font-size:  2em;
 }
 
 :root {
@@ -67,6 +68,22 @@ button {
   width: 100%;
   height: auto;
   z-index: 999;
+}
+
+#link_list {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+
+.page_link{
+  text-decoration: none;
+  margin: 0 1em;
+}
+
+.pg_icons {
+  font-size: 2em;
 }
 
 .navbar {
@@ -248,10 +265,54 @@ button {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  margin: 5em auto 0;
+  margin: 8em auto 0;
+}
+
+/*~~~~~BULLETIN~~~~~*/
+input, textarea {
+  background-color: var(--bg2);
+  border: 1px solid var(--orange);
+  border-radius: 20px;
+  width: 50%;
+  padding: 0 10px;
+  text-align: center;
+}
+
+textarea {
+  overflow-y: scroll;
 }
 
 
+
+main {
+  width: 70%;
+  padding: 1em 2em;
+  margin: 0 auto;
+}
+
+.post_form {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  padding: 1em 5em;
+
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 0 2em;
+
+  background-color: var(--bg1);
+}
+
+.post {
+  background-color: var(--bg1);
+  margin: 1em 0;
+  padding: .5em;
+  border-radius: 20px;
+  text-align: justify;
+}
 
 /*~~~~~LIGHT MODE~~~~~*/
 body.light-theme {

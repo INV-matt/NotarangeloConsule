@@ -7,7 +7,7 @@ const About = ({ s_screen }) => {
                     <div className="abt-profile">
                         <p className="name">Michele Notarangelo</p>
                         <ul className="abt-links">
-                            <a href="https://matteomarini888@gmail.com" className="nerd-icons"></a>
+                            <a href="mailto:micheleferdinando.notarangelo@liceocalini.edu.it" className="nerd-icons"></a>
                             <a href="https://discordapp.com/users/736160149462581308" className="nerd-icons">ﭮ</a>
                             <a href="#" className="nerd-icons"></a>
                         </ul>
@@ -16,7 +16,7 @@ const About = ({ s_screen }) => {
                     <div className="abt-profile">
                         <p className="name">Matteo Marini</p>
                         <ul className="abt-links">
-                            <a href="https://matteomarini888@gmail.com" className="nerd-icons"></a>
+                            <a href="mailto:https://matteomarini888@gmail.com" className="nerd-icons"></a>
                             <a href="https://discordapp.com/users/622438595835461633" className="nerd-icons">ﭮ</a>
                             <a href="https://www.instagram.com/inv_matt/" className="nerd-icons"></a>
                         </ul>
@@ -30,7 +30,7 @@ const About = ({ s_screen }) => {
                     <div className="abt-profile">
                         <p className="name">Michele Notarangelo</p>
                         <ul className="abt-links">
-                            <a href="https://matteomarini888@gmail.com" className="nerd-icons"></a>
+                            <a href="mailto:micheleferdinando.notarangelo@liceocalini.edu.it" className="nerd-icons"></a>
                             <a href="https://discordapp.com/users/736160149462581308" className="nerd-icons">ﭮ</a>
                             <a href="#" className="nerd-icons"></a>
                         </ul>
@@ -39,7 +39,7 @@ const About = ({ s_screen }) => {
                     <div className="abt-profile">
                         <p className="name">Matteo Marini</p>
                         <ul className="abt-links">
-                            <a href="https://matteomarini888@gmail.com" className="nerd-icons"></a>
+                            <a href="mailto:https://matteomarini888@gmail.com" className="nerd-icons"></a>
                             <a href="https://discordapp.com/users/622438595835461633" className="nerd-icons">ﭮ</a>
                             <a href="https://www.instagram.com/inv_matt/" className="nerd-icons"></a>
                         </ul>
