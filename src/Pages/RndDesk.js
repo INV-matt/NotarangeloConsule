@@ -1,4 +1,5 @@
 import desk from '../imgs/desk.png';
+import desk2 from '../imgs/teacher desk.png'
 
 const Desk = ({person}) => {
     
@@ -47,6 +48,7 @@ const RndDesk = () => {
             {shuffle(cl_array)}
             {console.log(cl_array)}
             <div className='rnd_deskrow'>
+                <img src={desk2} alt="teacher's desk" className='teacher_desk r180d'/>
                 {
                     bidimArray(cl_array).map(a => (
                         <div className="rnd_desk">
