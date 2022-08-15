@@ -131,28 +131,30 @@ function App() {
   }, []);
 
   return (
-    <Router>
-      <div className="App">
-        <Header s_screen={s_screen}/>
-        <div className="content">
-          <Switch>
-            <Route exact path="/" >
-              <Home s_screen={s_screen}/>
-            </Route>
-            <Route path="/about" >
-              <About s_screen={s_screen}/>
-            </Route>
-            <Route path="/desk" >
-              <RndDesk s_screen={s_screen}/>
-            </Route>
-            <Route path="/bulletin">
-              <Bulletin/>
-            </Route>
-          </Switch>
-          {/*<Home s_screen={s_screen}/>*/}
+    <div style={{ margin: "0 1em", paddingTop: "env(safe-area-inset-top)"}}>
+      <Router>
+        <div className="App">
+          <Header s_screen={s_screen}/>
+          <div className="content">
+            <Switch>
+              <Route exact path="/" >
+                <Home s_screen={s_screen}/>
+              </Route>
+              <Route path="/about" >
+                <About s_screen={s_screen}/>
+              </Route>
+              <Route path="/desk" >
+                <RndDesk s_screen={s_screen}/>
+              </Route>
+              <Route path="/bulletin">
+                <Bulletin/>
+              </Route>
+            </Switch>
+            {/*<Home s_screen={s_screen}/>*/}
+          </div>
         </div>
-      </div>
-    </Router>
+      </Router>
+    </div>
   );
 }
 
