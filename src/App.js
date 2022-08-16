@@ -94,7 +94,7 @@ const Bulletin = () => {
           
           {!loggedIn && 
             (<form className='post_form' onSubmit={checkPW}>
-                <input placeholder='Inserire Password per aggiungere post alla bacheca' value={pwValue} onChange={(e) => setPwValue(e.target.value)}/>
+                <input placeholder='Password' value={pwValue} onChange={(e) => setPwValue(e.target.value)}/>
                 <button className='nerd-icons' type='submit'></button>
             </form>)
           }
@@ -107,7 +107,7 @@ const Bulletin = () => {
           }
 
           {loggedIn && 
-            (<form className='post_form debug' onSubmit={sendPost}>
+            (<form className='post_form' onSubmit={sendPost}>
                 <textarea rows={5} value={formValue} onChange={(e) => setFormValue(e.target.value)}></textarea>
                 <button className='nerd-icons' type='submit'></button>
             </form>)

@@ -11,6 +11,10 @@
   font-size:  2em;
 }
 
+ul {
+  list-style: none;
+}
+
 :root {
   --bg0: #282828;
   --bg1: #3c3836;
@@ -29,7 +33,8 @@
 }
 
 .debug {
-  border: 2px solid red;
+  outline: 1px solid red;
+
 }
 
 * {
@@ -40,6 +45,7 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+
 }
 
 body {
@@ -82,6 +88,10 @@ button {
   margin: 0 1em;
 }
 
+.page_link > .pg_icons:hover {
+  color: var(--fg2);
+}
+
 .pg_icons {
   font-size: 2em;
 }
@@ -103,6 +113,42 @@ button {
   flex-direction: row;
   align-items: center;
   justify-content: space-between;
+}
+
+.menu {
+  position: absolute;
+  top: 6em;
+  left: 10%;
+  background-color: var(--bg1);
+  padding: 0.5em;
+  width: 80%;
+  transition: opacity .25 ease-in;
+}
+
+.menu.act {
+  opacity: 0;
+  transform: scale(0);
+}
+
+.toggle-menu .open-menu-icon {
+  display: none;
+}
+
+.toggle-menu .close-menu-icon {
+  display: block;
+}
+
+
+.list {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+}
+/*.menu .list {flex-direction: column;}*/
+
+li {
+  text-align: center;
+  line-height: 1em;
 }
 
 .logo {
@@ -273,10 +319,14 @@ input, textarea {
   background-color: var(--bg2);
   border: 1px solid var(--orange);
   border-radius: 20px;
-  width: 50%;
+  width: 100%;
   padding: 0 10px;
   text-align: center;
 }
+
+/*.post_form > input {
+  width: 10em;
+}*/
 
 textarea {
   overflow-y: scroll;
@@ -295,7 +345,7 @@ main {
   bottom: 0;
   left: 0;
   width: 100%;
-  padding: 1em 5em;
+  padding: 1em 10%;
 
   display: flex;
   flex-direction: row;
