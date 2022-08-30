@@ -44,7 +44,7 @@ const Header = ({s_screen}) => {
                 
                 <div id="link_list">
                     
-                    { s_screen && (<>
+                    { /*s_screen && (<>
                         <div className="menu act" id="menu">
                             <ul className="list">
                                 <li>
@@ -62,12 +62,17 @@ const Header = ({s_screen}) => {
                                         <p className="nerd-icons pg_icons"></p>
                                     </Link>
                                 </li>
+                                <li>
+                                    <Link className="page_link" to="/bday">
+                                        <p className="nerd-icons pg_icons"></p>
+                                    </Link>
+                                </li>
                             </ul>
                         </div>
-                        </>)
+                        </>)*/
                     }
                     
-                    { !s_screen && (<> 
+                    { /*!s_screen && (<> 
                         <Link className="page_link" to="/">
                             <p className="nerd-icons pg_icons"></p>
                         </Link>
@@ -78,7 +83,10 @@ const Header = ({s_screen}) => {
                         <Link className="page_link" to="/bulletin">
                             <p className="nerd-icons pg_icons"></p>
                         </Link> 
-                        </>)
+                        <Link className="page_link" to="/bday">
+                            <p className="nerd-icons pg_icons"></p>
+                        </Link>
+                        </>)*/
                     }
 
                     <button className="page_link theme-switch" onClick={ToggleTheme}>
@@ -86,11 +94,11 @@ const Header = ({s_screen}) => {
                         <i className="ri-moon-line moon-icon pg_icons"></i>
                     </button>
                         
-                    { s_screen &&
+                    { /*s_screen &&
                         (<button className="page_link" id="toggle-menu" onClick={ToggleMenu}>
                             <i className="ri-menu-3-line open-menu-icon pg_icons"></i>
                             <i className="ri-close-menu close-menu-icon pg_icons"></i>
-                        </button>)
+                        </button>)*/
                     }
 
                 </div>

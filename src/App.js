@@ -11,6 +11,7 @@ import { useCollectionData } from 'react-firebase-hooks/firestore';
 import Home from './Pages/Home.js'
 import About from './Pages/About.js';
 import RndDesk from './Pages/RndDesk.js';
+import BDay from './Pages/BDay.js';
 //import Bulletin from './Pages/Bulletin.js';
 
 import Header from './Components/Header';
@@ -148,6 +149,9 @@ function App() {
               </Route>
               <Route path="/bulletin">
                 <Bulletin/>
+              </Route>
+              <Route path="/bday">
+                <BDay s_screen={s_screen}/>
               </Route>
             </Switch>
             {/*<Home s_screen={s_screen}/>*/}

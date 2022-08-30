@@ -270,9 +270,7 @@ li {
   text-decoration: none;
 }
 
-.fl-dr-column {
-  flex-direction: column;
-}
+
 
 .s_about {
   font-size: 80%;
@@ -407,4 +405,58 @@ body.light-theme {
   -ms-transform: rotate(180deg);
   -o-transform: rotate(180deg);
   transform: rotate(180deg);
+}
+
+
+/* ~~~~~ BDAY ~~~~~ */
+
+.box {
+  background-color: var(--bg2);
+  border: 5px solid var(--fg0);
+  border-radius: 20px;
+  width: 250px;
+  height: 250px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  margin: 25px;
+}
+
+.b_name {
+  font-size: 2rem;
+  font-weight: bold;
+  text-align: center;
+}
+
+.b_date{
+  font-size: 1.5rem;
+  color: var(--fg1);
+  text-align: center;
+}
+
+.b_container {
+  height: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  
+}
+
+
+.s_b_container {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+
+
+.fl-dr-column {
+  flex-direction: column;
 }
