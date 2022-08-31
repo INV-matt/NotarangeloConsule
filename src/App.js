@@ -132,7 +132,7 @@ function App() {
   }, []);
 
   return (
-    <div style={{ margin: "0 1em", paddingTop: "env(safe-area-inset-top)"}}>
+    <div>
       <Router>
         <div className="App">
           <Header s_screen={s_screen}/>

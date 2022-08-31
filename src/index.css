@@ -118,10 +118,11 @@ button {
 .menu {
   position: absolute;
   top: 6em;
-  left: 10%;
+  /*right: 10%;*/
   background-color: var(--bg1);
   padding: 0.5em;
-  width: 80%;
+  width: 20%;
+  height: 100%;
   transition: opacity .25 ease-in;
 }
 
@@ -143,6 +144,7 @@ button {
   display: flex;
   align-items: center;
   justify-content: space-evenly;
+  flex-direction: column;
 }
 /*.menu .list {flex-direction: column;}*/
 
