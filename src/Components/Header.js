@@ -39,7 +39,7 @@ const Header = ({s_screen}) => {
             <nav className="navbar">
                 <Link to="/about" className="brand">
                         <img className="logo" src={logo} alt=""></img>
-                        { !s_screen && (<p className="name">NotaForPresident</p>)}
+                        { !s_screen && (<p className="name">NotarangeloConsule</p>)}
                 </Link>
                 
                 <div id="link_list">

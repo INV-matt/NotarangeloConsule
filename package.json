@@ -20,7 +20,9 @@
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "github": "git add . && git commit -m latest && git push -u origin main",
-    "all": "npm run build && firebase deploy && npm run github"
+    "dev": "npm run build && firebase deploy --project notaforpresident",
+    "prod": "npm run build && firebase deploy --project nota4pres-prod"
+
   },
   "eslintConfig": {
     "extends": [

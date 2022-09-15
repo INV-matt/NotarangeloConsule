@@ -5,14 +5,12 @@ import firebase from 'firebase/compat/app';
 import 'firebase/compat/auth';
 import 'firebase/compat/firestore';
 
-import { useAuthState } from 'react-firebase-hooks/auth';
 import { useCollectionData } from 'react-firebase-hooks/firestore';
 
 import Home from './Pages/Home.js'
 import About from './Pages/About.js';
 import RndDesk from './Pages/RndDesk.js';
 import BDay from './Pages/BDay.js';
-//import Bulletin from './Pages/Bulletin.js';
 
 import Header from './Components/Header';
 
@@ -28,15 +26,21 @@ firebase.initializeApp({
 })
 
 
-const auth = firebase.auth();
 const firestore = firebase.firestore();
-const analytics = firebase.analytics();
 
 
+const firebaseConfig = {
+  apiKey: "AIzaSyC5eUIdLmj5PUItgNNQmtJESfYzMpZ1Kag",
+  authDomain: "nota4pres-prod.firebaseapp.com",
+  projectId: "nota4pres-prod",
+  storageBucket: "nota4pres-prod.appspot.com",
+  messagingSenderId: "888933919263",
+  appId: "1:888933919263:web:0bd2ba086b619183b3032a",
+  measurementId: "G-QD3GQLPN9K"
+}; /*prod-config*/
 
 
 const _pw = 'Nota4Pres';
-
 
 let loggedIn = false;
 
@@ -44,7 +48,7 @@ const Post = (props) => {
   const { text } = props.message;
 
   return (
-    <div className="post debug">
+    <div className="post">
       <p className='post_text'>{text}</p>
     </div>
   )
