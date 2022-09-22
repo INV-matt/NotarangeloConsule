@@ -10,26 +10,24 @@ import { useCollectionData } from 'react-firebase-hooks/firestore';
 import Home from './Pages/Home.js'
 import About from './Pages/About.js';
 import RndDesk from './Pages/RndDesk.js';
+import RndPicker from './Pages/RndPicker';
 import BDay from './Pages/BDay.js';
 
 import Header from './Components/Header';
 
 
 
-firebase.initializeApp({
+
+const fbconfigDev = {
   apiKey: "AIzaSyBpNx-IjBY4uV7YIglduQjlu_VzsPoTXsk",
   authDomain: "notaforpresident.firebaseapp.com",
   projectId: "notaforpresident",
   storageBucket: "notaforpresident.appspot.com",
   messagingSenderId: "482254203223",
   appId: "1:482254203223:web:f26365785850b10f507612"
-})
+}
 
-
-const firestore = firebase.firestore();
-
-
-const firebaseConfig = {
+const firebaseConfigProd = {
   apiKey: "AIzaSyC5eUIdLmj5PUItgNNQmtJESfYzMpZ1Kag",
   authDomain: "nota4pres-prod.firebaseapp.com",
   projectId: "nota4pres-prod",
@@ -39,11 +37,21 @@ const firebaseConfig = {
   measurementId: "G-QD3GQLPN9K"
 }; /*prod-config*/
 
+const firebaseConfigNotaConsule = {
+  apiKey: "AIzaSyC59Hh3cmu226pOrh6KOMuQiXCZhqa1I3M",
+  authDomain: "notarangeloconsule.firebaseapp.com",
+  projectId: "notarangeloconsule",
+  storageBucket: "notarangeloconsule.appspot.com",
+  messagingSenderId: "72855183718",
+  appId: "1:72855183718:web:d08fa6858c5e9b7987a8a7"
+};
 
-const _pw = 'Nota4Pres';
+const app= firebase.initializeApp(firebaseConfigNotaConsule)
+const firestore = firebase.firestore();
 
+
+//#region BULLETIN
 let loggedIn = false;
-
 const Post = (props) => {
   const { text } = props.message;
 
@@ -53,8 +61,6 @@ const Post = (props) => {
     </div>
   )
 }
-
-
 const Bulletin = () => {
 
   const dummy = useRef();
@@ -83,7 +89,7 @@ const Bulletin = () => {
   const checkPW = (e) => {
     e.preventDefault();
 
-    if (pwValue === _pw) {
+    if (pwValue === `${process.env.REACT_APP_PW}`) {
       loggedIn = true;
     }
 
@@ -120,18 +126,20 @@ const Bulletin = () => {
       </>
   );
 }
+//#endregion BULLETIN
+
 
 
 function App() {
     // @media queries
     const [s_screen, setS_screen] = useState(
-      window.matchMedia("(max-width: 768px)").matches
+      window.matchMedia("(max-width: 860px)").matches
     );
 
     
   useEffect(() => {
       window
-      .matchMedia("(max-width: 768px)")
+      .matchMedia("(max-width: 860px)")
       .addEventListener('change', e => setS_screen( e.matches ));
   }, []);
 
@@ -156,6 +164,9 @@ function App() {
               </Route>
               <Route path="/bday">
                 <BDay s_screen={s_screen}/>
+              </Route>
+              <Route path="/rnd">
+                <RndPicker s_screen={s_screen}/>
               </Route>
             </Switch>
             {/*<Home s_screen={s_screen}/>*/}

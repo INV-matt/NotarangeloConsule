@@ -36,7 +36,7 @@ const Header = ({s_screen}) => {
 
     return (
         <header className="header">
-            <nav className="navbar">
+            <nav className="navbar" id={s_screen ? "" : "screen_pad"} >
                 <Link to="/about" className="brand">
                         <img className="logo" src={logo} alt=""></img>
                         { !s_screen && (<p className="name">NotarangeloConsule</p>)}
@@ -67,6 +67,11 @@ const Header = ({s_screen}) => {
                                         <p className="nerd-icons pg_icons"></p>
                                     </Link>
                                 </li>
+                                <li>
+                                    <Link className="page_link" to="/rnd">
+                                        <p className="nerd-icons pg_icons"></p>
+                                    </Link>
+                                </li>
                             </ul>
                         </div>
                         </>)
@@ -85,6 +90,9 @@ const Header = ({s_screen}) => {
                         </Link> 
                         <Link className="page_link" to="/bday">
                             <p className="nerd-icons pg_icons"></p>
+                        </Link>
+                        <Link className="page_link" to="/rnd">
+                            <p className="nerd-icons pg_icons"></p>
                         </Link>
                         </>)
                     }

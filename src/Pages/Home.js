@@ -3,18 +3,6 @@ import logo from "../imgs/dike_blk_bg.png"
 
 const Home = ({s_screen}) => {
 
-
-        
-    /*const [low_screen, setLow_screen] = useState(
-            window.matchMedia("(max-height: 850px)").matches
-        );
-
-    useEffect(() => {
-        window
-        .matchMedia("(max-height: 850px)")
-        .addEventListener('change', e => setLow_screen( e.matches ));
-    }, []);*/
-
     const quotes = [
         {
             quote: "“Arriva il momento in cui bisogna scegliere tra ciò che è facile e ciò che è giusto.”",
@@ -70,8 +58,6 @@ const Home = ({s_screen}) => {
         },*/
     ]
     const idx = Math.floor(Math.random() * quotes.length);
-
-
 
     return (
         <div>

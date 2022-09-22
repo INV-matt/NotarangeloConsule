@@ -21,7 +21,8 @@
     "eject": "react-scripts eject",
     "github": "git add . && git commit -m latest && git push -u origin main",
     "dev": "npm run build && firebase deploy --project notaforpresident",
-    "prod": "npm run build && firebase deploy --project nota4pres-prod"
+    "prod": "npm run build && firebase deploy --project nota4pres-prod",
+    "con": "npm run build && firebase deploy --project notarangeloconsule"
 
   },
   "eslintConfig": {

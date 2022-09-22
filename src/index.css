@@ -98,12 +98,16 @@ button {
 
 .navbar {
   background-color: inherit;
-  width: 90%;
+  width: 100%;
   display: flex;
   align-items: center;
   justify-content: space-between;
   padding-block: 1rem;
   margin: 0 auto;
+}
+
+#screen_pad {
+  width: 90%;
 }
 
 .brand {
@@ -116,14 +120,24 @@ button {
 }
 
 .menu {
-  position: absolute;
+  /*position: absolute;
   top: 6em;
-  /*right: 10%;*/
+  right: 10%;
   background-color: var(--bg1);
   padding: 0.5em;
   width: 20%;
-  height: 100%;
+  height: 100%;*/
   transition: opacity .25 ease-in;
+}
+
+#menu {
+  position: fixed;
+  top: 5em;
+  right: 0em;
+
+  padding: 20px ;
+  background-color: var(--bg1);
+  height: 100%;
 }
 
 .menu.act {
