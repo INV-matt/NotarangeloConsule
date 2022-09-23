@@ -1,18 +1,5 @@
-const Card = ({name, date}) => {
-    return (
-        <>
-            <div className="box">
-                <p className="b_name">
-                    {name}
-                </p>
-                <p className="b_date">
-                    {date}
-                </p>
-            </div>
-        </>
-    )
-}
-
+import {BDCard} from "../Components/Card";
+import img from "../imgs/gruvbox.png";
 
 
 const BDay = ({ s_screen }) => {
@@ -171,7 +158,7 @@ const BDay = ({ s_screen }) => {
     return (
     <div className={s_screen ? "s_b_container fl-dr-column" : "b_container"}>
         {
-            _b.length != 0 ? _b.map(_ => <Card name={_.name} date={_.date} key={_.id} />) : noBDays
+            _b.length != 0 ? _b.map(_ => <BDCard name={_.name} date={_.date} key={_.id} />) : noBDays
         }
     </div>
     );

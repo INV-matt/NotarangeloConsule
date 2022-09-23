@@ -1,46 +1,28 @@
 import { useState } from 'react';
+import img from '../imgs/i-want-you.png';
+
 
 const RndPicker = () => {
 
   const cl_array = ["Bilali", "Boldi", 'Capoferri', 'Casta', 'Dalgrosso', 'Danesi', 'Deou', 'Dequeker', 'Faini', 'Gasparotti', 'Ghidini', 'Gurini', 'Hrzallah', 'Kemta', 'Manara', 'Marini', 'Micheletti', 'Morandi', 'Notarangelo', 'Reccagni', 'Rodella', 'Romano', 'Rubagotti', 'Salodini', 'Salvadori', 'Ventura'];
-  let firstNarr = []
 
-  const [NumberOfPpl, SetNumberOfPpl] = useState()
-
-  const shuffle2 = (array) => {
-      var m = array.length, t, i;
-      while (m) {
-          i = Math.floor(Math.random() * m--);
-          t = array[m];
-          array[m] = array[i];
-          array[i] = t;
-      }
+  const Choose = (arr) => {
+    let rnd = Math.random()*arr.length;
+    return cl_array[Math.floor(rnd)]
   }
 
-  const Show = (e) => {
-      e.preventDefault();
+  return(<div id='rnd_picker' >
 
-      shuffle2(cl_array);
-      firstNarr = cl_array.slice(0, parseInt(NumberOfPpl));
+    <div className="b_rnd">
+      <p className="b_name">
+          {Choose(cl_array)}
+      </p>
+    </div>
+
+    <img src={img} id='img-icy'  />
 
 
-  }
-
-  return(<>
-
-    { firstNarr.map(_ => {
-              <p key={_.id}>_</p>
-        })
-    }
-
-      {
-          <form className='' onSubmit={Show}>
-              <input placeholder='' value={NumberOfPpl} onChange={(e) => SetNumberOfPpl(e.target.value)}/>
-              <button className='nerd-icons' type='submit'></button>
-          </form>
-      }
-
-  </>)
+  </div>)
 }
 
 export default RndPicker;

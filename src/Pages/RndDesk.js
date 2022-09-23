@@ -5,7 +5,7 @@ import desk2 from '../imgs/teacher desk.png'
 const Desk = ({person}) => {
     
     return ( 
-        <div className='desk'>
+        <div className='desk' id={person == 'BUCO' ? "empty-desk" : ""} >
             <img src={desk} alt="desk" className='desk_img' />
             <p className=''>{person}</p>
         </div>
@@ -14,7 +14,7 @@ const Desk = ({person}) => {
 
 
 
-const RndDesk = () => {
+const RndDesk = ({s_screen}) => {
     
     const cl_array = ["Bilali", "Boldi", 'Capoferri', 'Casta', 'Dalgrosso', 'Danesi', 'Deou', 'Dequeker', 'Faini', 'Gasparotti', 'Ghidini', 'Gurini', 'Hrzallah', 'Kemta', 'Manara', 'Marini', 'Micheletti', 'Morandi', 'Notarangelo', 'Reccagni', 'Rodella', 'Romano', 'Rubagotti', 'Salodini', 'Salvadori', 'Ventura'];
 
@@ -58,8 +58,11 @@ const RndDesk = () => {
     }
 
     return (
+        <>
+        { !s_screen && (        
         <div>
             {console.log(cl_array)}
+            
             <div className='rnd_deskrow'>
                 <img src={desk2} alt="teacher's desk" className='teacher_desk r180d'/>
                 {
@@ -74,7 +77,18 @@ const RndDesk = () => {
                     ))
                 }
             </div>
+
+            <p style={{textAlign: "center"}} >Viene fatto uso dell'algoritmo di <a href={"https://en.wikipedia.org/wiki/Fisher%E2%80%93Yates_shuffle"} target="_blank" >Fisher-Yates</a></p>
         </div>
+        )}
+
+        { s_screen && (
+            <div style={{display: 'flex', alignItems: 'center', justifyContent: 'center', height: '100%', /*padding: '200px 20px'*/}} className='box' >
+                <p className='b_name' style={{fontSize: 20, margin: 20}} >Small screens not supported yet. <br />Remember how they say: small screen, big pp</p>
+            </div>
+        )}
+        
+        </>
     );
 
 }

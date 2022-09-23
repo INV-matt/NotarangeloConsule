@@ -64,7 +64,7 @@ const Home = ({s_screen}) => {
             { !s_screen && (
                     <div className="home">
                         <div className="img-container">
-                            <a href="https://youtu.be/QJJYpsA5tv8">
+                            <a href="https://youtu.be/QJJYpsA5tv8" target="_blank">
                                 <img className="img" src={logo} alt=''/>
                             </a>
                         </div>

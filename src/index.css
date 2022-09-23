@@ -22,6 +22,8 @@ ul {
   --fg0: #fbf1c7;
   --fg1: #ebdbb2;
   --fg2: #d5c4a1;
+  --blur_bg: rgba(60, 60, 60, 0.5);
+
   
   --red: #fb4934;
   --green: #b8bb26;
@@ -45,12 +47,15 @@ ul {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  
 
 }
 
 body {
   background-color: var(--bg0);
   transition: background-color .25s, color .25s;
+
+  background-image: url(./imgs/gruvbox.png);
 }
 
 button {
@@ -60,9 +65,12 @@ button {
 }
 
 
+
+
 .App {
   /*max-width: 75%;*/
   margin: 0 auto;
+
 }
 
 .header {
@@ -249,19 +257,6 @@ li {
 
 
 
-/*.l_text {
-  align-content: center;
-  justify-content: center;
-  flex: 1;
-  font-size: 0.7em;
-}*/
-
-/*.l_img {
-  width: 100%;
-  margin: 0 auto;
-  margin-bottom: 0;
-}*/
-
 /*~~~~~ABOUT~~~~~*/
 .about {
   display: flex;
@@ -299,7 +294,10 @@ li {
   align-items: center;
   justify-content: center;
   margin: 0 20px 20px;
-  outline: 1px greenyellow;
+}
+
+#empty-desk {
+  display: none;
 }
 
 .teacher_desk {
@@ -427,11 +425,14 @@ body.light-theme {
 /* ~~~~~ BDAY ~~~~~ */
 
 .box {
-  background-color: var(--bg2);
-  border: 5px solid var(--fg0);
+  background-color: var(--blur_bg);
+  /*border: 5px solid var(--fg0);*/
   border-radius: 20px;
-  width: 250px;
-  height: 250px;
+  width: 300px;
+  height: 300px;
+  box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
+
+  backdrop-filter: blur(10px);
 
   display: flex;
   flex-direction: column;
@@ -447,6 +448,29 @@ body.light-theme {
   text-align: center;
 }
 
+.b_rnd {
+  background-color: var(--blur_bg);
+  /*border: 5px solid var(--fg0);*/
+  border-radius: 20px;
+
+  box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
+
+  backdrop-filter: blur(10px);
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  margin: 25px;
+  width: min(500px, 80%);
+  height: 100px;
+}
+
+#img-icy{
+  height: min(750px, 30%);
+}
+
 .b_date{
   font-size: 1.5rem;
   color: var(--fg1);
@@ -459,7 +483,9 @@ body.light-theme {
   flex-direction: row;
   align-items: center;
   justify-content: center;
-  
+
+ /* background-image: url(./imgs/gruvbox.png);*/
+
 }
 
 
@@ -476,3 +502,15 @@ body.light-theme {
 .fl-dr-column {
   flex-direction: column;
 }
+
+
+/* ~~~~~ RNDPICKER ~~~~~  */
+#rnd_picker{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+
+
+}
+
