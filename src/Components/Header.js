@@ -48,23 +48,23 @@ const Header = ({s_screen}) => {
                                     </Link>
                                 </li>
                                 <li>
-                                    <Link className="page_link" to="/desk">
-                                        <p className="nerd-icons pg_icons"></p>
-                                    </Link>
-                                </li>
-                                <li>
                                     <Link className="page_link" to="/bulletin">
                                         <p className="nerd-icons pg_icons"></p>
                                     </Link>
                                 </li>
                                 <li>
-                                    <Link className="page_link" to="/bday">
-                                        <p className="nerd-icons pg_icons"></p>
+                                    <Link className="page_link" to="/desk">
+                                        <p className="nerd-icons pg_icons"></p>
                                     </Link>
                                 </li>
                                 <li>
                                     <Link className="page_link" to="/rnd">
                                         <p className="nerd-icons pg_icons"></p>
+                                    </Link>
+                                </li>
+                                <li>
+                                    <Link className="page_link" to="/bday">
+                                        <p className="nerd-icons pg_icons"></p>
                                     </Link>
                                 </li>
                             </ul>
@@ -76,18 +76,17 @@ const Header = ({s_screen}) => {
                         <Link className="page_link" to="/">
                             <p className="nerd-icons pg_icons"></p>
                         </Link>
-                        
-                        <Link className="page_link" to="/desk">
-                            <p className="nerd-icons pg_icons"></p>
-                        </Link>
                         <Link className="page_link" to="/bulletin">
                             <p className="nerd-icons pg_icons"></p>
                         </Link> 
-                        <Link className="page_link" to="/bday">
-                            <p className="nerd-icons pg_icons"></p>
+                        <Link className="page_link" to="/desk">
+                            <p className="nerd-icons pg_icons"></p>
                         </Link>
                         <Link className="page_link" to="/rnd">
                             <p className="nerd-icons pg_icons"></p>
+                        </Link>
+                        <Link className="page_link" to="/bday">
+                            <p className="nerd-icons pg_icons"></p>
                         </Link>
                         </>)
                     }
