@@ -1,5 +1,6 @@
-import logo from "../imgs/dike_blk_bg.png"
-
+import logo from "../imgs/dike_blk_bg.png";
+import rick from "../imgs/rick.png";
+import { QCard } from '../Components/Card';
 
 const Home = ({s_screen}) => {
 
@@ -64,52 +65,30 @@ const Home = ({s_screen}) => {
             { !s_screen && (
                     <div className="home">
                         <div className="img-container">
-                            <a href="https://youtu.be/QJJYpsA5tv8" target="_blank">
+                            {quotes[idx].author !== "Rick Astley" && (<a href="https://youtu.be/QJJYpsA5tv8" target="_blank" rel="noreferrer">
                                 <img className="img" src={logo} alt=''/>
-                            </a>
+                            </a>)}
+                            {quotes[idx].author === "Rick Astley" && (<a href="https://youtu.be/dQw4w9WgXcQ" target="_blank" rel="noreferrer">
+                                <img className="img" src={rick} alt=''/>
+                            </a>)}
                         </div>
-                        <div className="text">
-                            <p className="quote">
-                                {quotes[idx].quote}
-                            </p>
-                            <p className="author">{quotes[idx].author}</p>
-                            <p className='sign'>Michele Ferdinando Notarangelo,<br />candidato rappresentante di classe</p>
-                        </div>
+                        <QCard quote={quotes[idx].quote} author={quotes[idx].author} />
                     </div>
                 )
             }
 
             { s_screen && (
                     <div className="s_home">
-                        <a href="https://youtu.be/QJJYpsA5tv8">
-                            <img className="s_img" src={logo} alt=''/>
-                        </a>
-                        <div className="s_text">
-                            <p className="quote">
-                                {quotes[idx].quote}
-                            </p>
-                            <p className="author">{quotes[idx].author}</p>
-                            <p className='sign'>Michele Ferdinando Notarangelo,<br />candidato rappresentante di classe</p>
-                        </div>
+                        
+                        {quotes[idx].author !== "Rick Astley" && (<a href="https://youtu.be/QJJYpsA5tv8" target="_blank" rel="noreferrer">
+                            <img className="img" src={logo} alt=''/>
+                        </a>)}
+                        {quotes[idx].author === "Rick Astley" && (<a href="https://youtu.be/dQw4w9WgXcQ" target="_blank" rel="noreferrer">
+                            <img className="img" src={rick} alt=''/>
+                        </a>)}
+                        <QCard quote={quotes[idx].quote} author={quotes[idx].author} small />
                     </div>
                 )
-            }
-
-            {/*
-                s_screen && low_screen && (
-                    <div className="s_home">
-                        <a href="https://youtu.be/QJJYpsA5tv8">
-                            <img className="l_img" src={logo} alt=''/>
-                        </a>
-                        <div className="l_text">
-                            <p className="quote">
-                                {quotes[idx].quote}
-                            </p>
-                            <p className="author">{quotes[idx].author}</p>
-                            <p className='sign'>Michele Ferdinando Notarangelo,<br />candidato rappresentante di classe</p>
-                        </div>
-                    </div>
-                )*/
             }
         </div>
     );

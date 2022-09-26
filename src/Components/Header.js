@@ -1,13 +1,8 @@
 import logo from "../imgs/logo.png"
 import { Link } from 'react-router-dom';
 
-import firebase from 'firebase/app';
+//import firebase from 'firebase/app';
 import 'firebase/compat/firestore';
-import 'firebase/compat/auth';
-import 'firebase/compat/analytics';
-
-import { useAuthState } from 'react-firebase-hooks/auth';
-import { useCollectionData } from 'react-firebase-hooks/firestore';
 
 const Header = ({s_screen}) => {
     /*~~~~~THEME SELECTOR~~~~~*/

@@ -22,7 +22,7 @@ ul {
   --fg0: #fbf1c7;
   --fg1: #ebdbb2;
   --fg2: #d5c4a1;
-  --blur_bg: rgba(60, 60, 60, 0.5);
+  --blur_bg: rgba(40, 40, 40, 0.60);
 
   
   --red: #fb4934;
@@ -32,6 +32,8 @@ ul {
   --purple: #d3869b;
   --aqua: #8ec07c;
   --orange: #fe8019;
+
+  --shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
 }
 
 .debug {
@@ -56,6 +58,7 @@ body {
   transition: background-color .25s, color .25s;
 
   background-image: url(./imgs/gruvbox.png);
+  background-attachment: fixed;
 }
 
 button {
@@ -63,9 +66,6 @@ button {
   border: none;
   background-color: inherit;
 }
-
-
-
 
 .App {
   /*max-width: 75%;*/
@@ -205,17 +205,25 @@ li {
 .home {
   display: flex;
   flex-direction: row;
-  max-width: 75%;
+  max-width: 85%;
   margin: 0 auto;
+  align-items: center;
+  justify-content: center;
 }
 
 .img-container {
   margin-right: 2em;
-  width: 40%;
+  margin-top: 25px;
+  border-radius: 20px; 
+  /*width: 40%;*/
+  height: min(600px, 40%)
 }
 
 .img {
   width: 100%;
+  border-radius: 20px;
+  box-shadow: var(--shadow);
+
 }
 
 .text {
@@ -238,12 +246,14 @@ li {
   width: 100%;
   margin: 0 auto;
   margin-bottom: 0;
+  border-radius: 20px;
+  box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
 }
 
 .s_home {
   display: flex;
   flex-direction: column;
-  max-width: 75%;
+  max-width: 90%;
   margin: 0 auto;
 }
 
@@ -281,11 +291,17 @@ li {
   text-decoration: none;
 }
 
-
-
-.s_about {
-  font-size: 80%;
+.s_about a {
+  font-size: 80px;
+  margin: 0 20px;
 }
+
+
+
+/*.s_about {
+  font-size: 75%;
+
+}*/
 
 /*~~~~~DESK~~~~~*/
 .desk {
@@ -323,7 +339,7 @@ li {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  margin: 8em auto 0;
+  margin: 7em auto 0;
 }
 
 /*~~~~~BULLETIN~~~~~*/
@@ -347,7 +363,7 @@ textarea {
 
 
 main {
-  width: 70%;
+  width: min(100%, 1536px);
   padding: 1em 2em;
   margin: 0 auto;
 }
@@ -381,7 +397,7 @@ body.light-theme {
   --fg0: #282828;
   --fg1: #3c3836;
   --fg2: #504945;
-  --bg0: #fbf1c7;
+  --bg0: rgb(251, 241, 199);
   --bg1: #ebdbb2;
   --bg2: #d5c4a1;
   
@@ -392,6 +408,8 @@ body.light-theme {
   --purple: #8f3f71;
   --aqua: #427b58;
   --orange: #af3a03;
+
+  --blur_bg: rgba(251, 241, 199, 0.60);
 }
 
 .moon-icon {
@@ -430,7 +448,7 @@ body.light-theme {
   border-radius: 20px;
   width: 300px;
   height: 300px;
-  box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
+  box-shadow: var(--shadow);
 
   backdrop-filter: blur(10px);
 
@@ -439,7 +457,7 @@ body.light-theme {
   align-items: center;
   justify-content: center;
 
-  margin: 25px;
+
 }
 
 .b_name {
@@ -467,9 +485,7 @@ body.light-theme {
   height: 100px;
 }
 
-#img-icy{
-  height: min(750px, 30%);
-}
+
 
 .b_date{
   font-size: 1.5rem;
@@ -510,7 +526,67 @@ body.light-theme {
   align-items: center;
   justify-content: center;
   flex-direction: column;
+}
 
+#i_icy_container {
+  width: min(90%, 500px) ;
+}
+
+#img-icy{
+  width: 100%;
+  border-radius: 20px;
+  box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
 
 }
 
+/*~~~~~ CARD~~~~~*/
+.q_card {
+  background-color: var(--blur_bg);
+  /*border: 5px solid var(--fg0);*/
+  border-radius: 20px;
+  width: 50%;
+  height: 600px;
+  box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
+
+  backdrop-filter: blur(10px);
+
+  display: flex;
+  flex-direction: column;
+  /*align-items: center;*/
+  justify-content: center;
+
+  padding: 48px;
+
+  margin: 25px;
+}
+
+.q_card_text {
+  font-size: 2rem;
+  font-weight: bold;
+  text-align: center;
+}
+
+.sq_card {
+  background-color: var(--blur_bg);
+  /*border: 5px solid var(--fg0);*/
+  border-radius: 20px;
+  /*height: 600px;*/
+  box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
+
+  backdrop-filter: blur(10px);
+
+  padding: 10px;
+
+  display: flex;
+  flex-direction: column;
+  /*align-items: center;*/
+  justify-content: center;
+
+  margin-top: 10px;
+}
+
+.sq_card_text {
+  font-size: 1rem;
+  /*font-weight: bold;*/
+  text-align: center;
+}

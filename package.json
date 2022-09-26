@@ -1,6 +1,6 @@
 {
   "name": "nota4president",
-  "version": "0.1.0",
+  "version": "1.0.0",
   "private": true,
   "dependencies": {
     "@testing-library/jest-dom": "^5.16.4",
@@ -23,7 +23,6 @@
     "dev": "npm run build && firebase deploy --project notaforpresident",
     "prod": "npm run build && firebase deploy --project nota4pres-prod",
     "con": "npm run build && firebase deploy --project notarangeloconsule"
-
   },
   "eslintConfig": {
     "extends": [

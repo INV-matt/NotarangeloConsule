@@ -1,13 +1,12 @@
-import { useState } from 'react';
 import desk from '../imgs/desk.png';
 import desk2 from '../imgs/teacher desk.png'
 
 const Desk = ({person}) => {
     
     return ( 
-        <div className='desk' id={person == 'BUCO' ? "empty-desk" : ""} >
+        <div className='desk' id={person === 'BUCO' ? "empty-desk" : ""} >
             <img src={desk} alt="desk" className='desk_img' />
-            <p className=''>{person}</p>
+            <p className='box' style={{height: 30, width: 120, margin: 0}}>{person}</p>
         </div>
     );
 }
@@ -60,7 +59,7 @@ const RndDesk = ({s_screen}) => {
     return (
         <>
         { !s_screen && (        
-        <div>
+        <div >
             {console.log(cl_array)}
             
             <div className='rnd_deskrow'>
@@ -78,13 +77,13 @@ const RndDesk = ({s_screen}) => {
                 }
             </div>
 
-            <p style={{textAlign: "center"}} >Viene fatto uso dell'algoritmo di <a href={"https://en.wikipedia.org/wiki/Fisher%E2%80%93Yates_shuffle"} target="_blank" >Fisher-Yates</a></p>
+            <p className='box' style={{height: 30, width: 600, margin: '0 auto', textAlign: "center", display: 'block'}} >Viene fatto uso dell'algoritmo di <a href={"https://en.wikipedia.org/wiki/Fisher%E2%80%93Yates_shuffle"} target="_blank" rel='noreferrer' >Fisher-Yates</a></p>
         </div>
         )}
 
         { s_screen && (
-            <div style={{display: 'flex', alignItems: 'center', justifyContent: 'center', height: '100%', /*padding: '200px 20px'*/}} className='box' >
-                <p className='b_name' style={{fontSize: 20, margin: 20}} >Small screens not supported yet. <br />Remember how they say: small screen, big pp</p>
+            <div style={{display: 'flex', alignItems: 'center', justifyContent: 'center', height: '100%', /*padding: '200px 20px'*/ margin: '0 auto'}} className='box' >
+                <p className='b_name' style={{fontSize: 20, margin: 20}} >Small screens not supported yet. <br /><br />Remember how they say: small screen, big pp</p>
             </div>
         )}
         

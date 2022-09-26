@@ -1,10 +1,8 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { BrowserRouter as Router, Route, Switch} from 'react-router-dom';
-
 import firebase from 'firebase/compat/app';
 import 'firebase/compat/auth';
 import 'firebase/compat/firestore';
-
 import { useCollectionData } from 'react-firebase-hooks/firestore';
 
 import Home from './Pages/Home.js'
@@ -15,10 +13,7 @@ import BDay from './Pages/BDay.js';
 
 import Header from './Components/Header';
 
-
-
-
-const fbconfigDev = {
+/*const fbconfigDev = {
   apiKey: "AIzaSyBpNx-IjBY4uV7YIglduQjlu_VzsPoTXsk",
   authDomain: "notaforpresident.firebaseapp.com",
   projectId: "notaforpresident",
@@ -46,9 +41,9 @@ const firebaseConfigNotaConsule = {
   appId: "1:72855183718:web:d08fa6858c5e9b7987a8a7"
 };
 
-const app= firebase.initializeApp(firebaseConfigNotaConsule)
+firebase.initializeApp(firebaseConfigNotaConsule);
 const firestore = firebase.firestore();
-
+const _pw = "Nota4Pres";
 
 //#region BULLETIN
 let loggedIn = false;
@@ -89,7 +84,7 @@ const Bulletin = () => {
   const checkPW = (e) => {
     e.preventDefault();
 
-    if (pwValue === `${process.env.REACT_APP_PW}`) {
+    if (pwValue === _pw) {
       loggedIn = true;
     }
 
@@ -127,7 +122,6 @@ const Bulletin = () => {
   );
 }
 //#endregion BULLETIN
-
 
 
 function App() {

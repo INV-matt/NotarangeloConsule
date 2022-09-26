@@ -1,9 +1,6 @@
 import {BDCard} from "../Components/Card";
-import img from "../imgs/gruvbox.png";
-
 
 const BDay = ({ s_screen }) => {
-
     const birthdays = [
         [
             {
@@ -29,7 +26,7 @@ const BDay = ({ s_screen }) => {
         ],
         [
             {
-                'name': 'Beatrice',
+                'name': 'Buona Ventura',
                 'date': '03/04'
             },
             {
@@ -158,7 +155,7 @@ const BDay = ({ s_screen }) => {
     return (
     <div className={s_screen ? "s_b_container fl-dr-column" : "b_container"}>
         {
-            _b.length != 0 ? _b.map(_ => <BDCard name={_.name} date={_.date} key={_.id} />) : noBDays
+            _b.length !== 0 ? _b.map(_ => <BDCard name={_.name} date={_.date} key={_.id} small={s_screen} />) : noBDays
         }
     </div>
     );
