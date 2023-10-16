@@ -1,11 +1,12 @@
 {
   "name": "nota4president",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "private": true,
   "dependencies": {
     "@testing-library/jest-dom": "^5.16.4",
     "@testing-library/react": "^13.3.0",
     "@testing-library/user-event": "^13.5.0",
+    "crypto-js": "^4.1.1",
     "file-loader": "^6.2.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
@@ -22,7 +23,8 @@
     "github": "git add . && git commit -m latest && git push -u origin main",
     "dev": "npm run build && firebase deploy --project notaforpresident",
     "prod": "npm run build && firebase deploy --project nota4pres-prod",
-    "con": "npm run build && firebase deploy --project notarangeloconsule"
+    "con": "npm run build && firebase deploy --project notarangeloconsule",
+    "3b": "npm run build && firebase deploy --project calini3b"
   },
   "eslintConfig": {
     "extends": [

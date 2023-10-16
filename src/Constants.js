@@ -1,4 +1,5 @@
-const _pw = "Nota4Pres";
+const CryptoJS = require('crypto-js');
+const _pw = "RmFudGFJbGFyaXTDoA==";
 
 const fbconfigDev = {
   apiKey: "AIzaSyBpNx-IjBY4uV7YIglduQjlu_VzsPoTXsk",
@@ -28,5 +29,21 @@ const firebaseConfigNotaConsule = {
   appId: "1:72855183718:web:d08fa6858c5e9b7987a8a7"
 };
 
+const firebaseConfigCalini3B = {
+  apiKey: "AIzaSyBTpQvwFx98LWjrEscPTol3fIivN-LxnME",
+  authDomain: "calini3b.firebaseapp.com",
+  projectId: "calini3b",
+  storageBucket: "calini3b.appspot.com",
+  messagingSenderId: "54795117511",
+  appId: "1:54795117511:web:f19616770bd2bd6eaaefe2"
+};
 
-export {_pw, fbconfigDev, firebaseConfigProd, firebaseConfigNotaConsule}
+
+const ancajnc = (cashjokacshkojasdchkojnadckohsniadcpjnikcadcnklòasdcknladcnklc) => {
+  return CryptoJS.enc.Base64.stringify(CryptoJS.enc.Utf8.parse(cashjokacshkojasdchkojnadckohsniadcpjnikcadcnklòasdcknladcnklc));
+};
+
+
+
+
+export {_pw, fbconfigDev, firebaseConfigProd, firebaseConfigNotaConsule, ancajnc, firebaseConfigCalini3B}

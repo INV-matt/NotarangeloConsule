@@ -11,7 +11,7 @@ const About = ({ s_screen }) => {
                         <ul className="abt-links">
                             <a rel="noreferrer" target="_blank" href="mailto:micheleferdinando.notarangelo@liceocalini.edu.it" className="nerd-icons"></a>
                             <a rel="noreferrer" target="_blank" href="https://discordapp.com/users/736160149462581308" className="nerd-icons">ﭮ</a>
-                            <a rel="noreferrer" target="_blank" href="https://www.instagram.com/inv_matt/" className="nerd-icons"></a>
+                            <a rel="noreferrer" target="_blank" href="https://www.instagram.com/michele_f._notarangelo/" className="nerd-icons"></a>
                         </ul>
                     </div>
 
@@ -34,7 +34,7 @@ const About = ({ s_screen }) => {
                         <ul className="abt-links">
                             <a rel="noreferrer" target="_blank" href="mailto:micheleferdinando.notarangelo@liceocalini.edu.it" className="nerd-icons"></a>
                             <a rel="noreferrer" target="_blank" href="https://discordapp.com/users/736160149462581308" className="nerd-icons">ﭮ</a>
-                            <a rel="noreferrer" target="_blank" href="https://www.instagram.com/inv_matt/" className="nerd-icons"></a>
+                            <a rel="noreferrer" target="_blank" href="https://www.instagram.com/michele_f._notarangelo/" className="nerd-icons"></a>
                         </ul>
                     </div>
 

@@ -1,5 +1,5 @@
-import React, { useState, useEffect, useRef } from 'react';
-import { BrowserRouter as Router, Route, Switch} from 'react-router-dom';
+import React, { useState, useEffect } from 'react';
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import firebase from 'firebase/compat/app';
 import 'firebase/compat/auth';
 import 'firebase/compat/firestore';
@@ -12,16 +12,16 @@ import RndPicker from './Pages/RndPicker';
 import BDay from './Pages/BDay.js';
 
 import Header from './Components/Header';
-import { _pw, firebaseConfigNotaConsule } from './Constants.js';
+import { _pw, firebaseConfigCalini3B, ancajnc } from './Constants.js';
+import { render } from '@testing-library/react';
 
 
-
-firebase.initializeApp(firebaseConfigNotaConsule);
+firebase.initializeApp(firebaseConfigCalini3B);
 const firestore = firebase.firestore();
-
 
 //#region BULLETIN
 let loggedIn = false;
+
 const Post = (props) => {
   const { text } = props.message;
 
@@ -31,35 +31,45 @@ const Post = (props) => {
     </div>
   )
 }
-const Bulletin = () => {
 
-  const dummy = useRef();
+const Bulletin = () => {
 
   const messagesRef = firestore.collection('messages');
   const query = messagesRef.orderBy('createdAt').limit(25);
 
-  const [messages] = useCollectionData(query, {idField: 'id'});
+  const [messages] = useCollectionData(query, { idField: 'id' });
 
   const [formValue, setFormValue] = useState('');
 
   const [pwValue, setPwValue] = useState('');
 
-  const sendPost = async(e) => {
-      e.preventDefault();
+  const gotoBottom = () => {
+    window.scrollTo({
+      top: document.documentElement.scrollHeight,
+      behavior: 'smooth',
+    });
+  };
 
-      await messagesRef.add({
-          text: formValue,
-          createdAt: firebase.firestore.FieldValue.serverTimestamp()
-      });
+  useEffect(() => gotoBottom())
 
-      setFormValue('');
-      dummy.current.scrollIntoView({behaviour: 'smooth'});
+  const sendPost = async (e) => {
+    e.preventDefault();
+
+    await messagesRef.add({
+      text: formValue,
+      createdAt: firebase.firestore.FieldValue.serverTimestamp()
+    });
+
+    setFormValue('');
+
+    gotoBottom();
+    //dummy.current.scrollIntoView({behaviour: 'smooth'});
   }
 
   const checkPW = (e) => {
     e.preventDefault();
 
-    if (pwValue === _pw) {
+    if (ancajnc(pwValue) === _pw) {
       loggedIn = true;
     }
 
@@ -67,75 +77,130 @@ const Bulletin = () => {
   }
 
   return (
-      <>
-          <main>
-              {messages && messages.map(_ => <Post key={_.id} message={_}/>) }
-          </main>
-          <div ref={dummy}></div>
-          
-          {!loggedIn && 
-            (<form className='post_form' onSubmit={checkPW}>
-                <input placeholder='Password' value={pwValue} onChange={(e) => setPwValue(e.target.value)}/>
-                <button className='nerd-icons' type='submit'></button>
-            </form>)
-          }
-          
-          {/*loggedIn && 
-            (<form className='post_form' onSubmit={sendPost}>
-                <input value={formValue} onChange={(e) => setFormValue(e.target.value)}/>
-                <button type='submit'>SEND</button>
-            </form>)*/
-          }
+    <>
+      <main>
+        {messages && messages.map(_ => <Post key={_.id} message={_} />)}
+        {/*<div ref={dummy}></div>*/}
+      </main>
 
-          {loggedIn && 
-            (<form className='post_form' onSubmit={sendPost}>
-                <textarea rows={5} value={formValue} onChange={(e) => setFormValue(e.target.value)}></textarea>
-                <button className='nerd-icons' type='submit'></button>
-            </form>)
-          }
-      </>
+      {!loggedIn &&
+        (<form className='post_form' onSubmit={checkPW}>
+          <input placeholder='Password' type="password" value={pwValue} onChange={(e) => setPwValue(e.target.value)} />
+          <button className='nerd-icons' type='submit'></button>
+        </form>)
+      }
+
+      {loggedIn &&
+        (<form className='post_form' onSubmit={sendPost}>
+          <textarea rows={5} value={formValue} onChange={(e) => setFormValue(e.target.value)}></textarea>
+          <button className='nerd-icons' type='submit'></button>
+        </form>)
+      }
+    </>
   );
 }
 //#endregion BULLETIN
 
 
-function App() {
-    // @media queries
-    const [s_screen, setS_screen] = useState(
-      window.matchMedia("(max-width: 860px)").matches
-    );
+//#region RANDOM.NOT
 
-    
+const Random = ({ small }) => {
+  /* NOMI CHE VOLEVAMO METTERE
+  Billy
+  PalleAscelle
+  Capo
+  Nana
+  CurveInTesta
+  Albania
+  Freccia
+  DequerekerequeNdrangheta
+  GigaMento
+  Gasperini
+  Ghido11
+  Napoli
+  Beppe Erzallà
+  Merion Djwongo
+  5^ RivoluzioneIndustriale
+  Drago
+  FantaGnomo
+  Morghi
+  Notariñho
+  PerchèSapo?
+  FantaSideCharacter
+  DeepAsTheCuts
+  ThomasTheTankEngine
+  Salo
+  Sapo
+  BonaVentura
+  */
+
+  const cl_array = ["Bilali", "Boldi", 'Capoferri', 'Casta', 'Dalgrosso', 'Danesi', 'Deou', 'Dequeker', 'Faini', 'Gaspa', 'Ghidini', 'Gurini', 'Hrzallah', 'Kemta', 'Manara', 'Marini', 'Micheletti', 'Morandi', 'Notarangelo', 'Reccagni', 'Rodella', 'Romano', 'Rubagotti', 'Salodini', 'Salvadori', 'Buona Ventura'];
+  const shuffle = (a) => {
+
+    var array = a
+    var m = array.length, t, i;
+    while (m) {
+      i = Math.floor(Math.random() * m--);
+      t = array[m];
+      array[m] = array[i];
+      array[i] = t;
+    }
+
+    return array;
+
+  }
+
+  return (
+    <div className="random-container">
+      <div className={small ? "s-random" : "random"}>
+        <ol>
+          {shuffle(cl_array).map(e => (<li>{e}</li>))}
+        </ol>
+      </div>
+    </div>
+  )
+}
+
+function App() {
+  // @media queries
+  const [s_screen, setS_screen] = useState(
+    window.matchMedia("(max-width: 860px)").matches
+  );
+
+
   useEffect(() => {
-      window
+    window
       .matchMedia("(max-width: 860px)")
-      .addEventListener('change', e => setS_screen( e.matches ));
+      .addEventListener('change', e => setS_screen(e.matches));
   }, []);
 
   return (
     <div>
       <Router>
         <div className="App">
-          <Header s_screen={s_screen}/>
+          <Header s_screen={s_screen} />
           <div className="content">
             <Switch>
               <Route exact path="/" >
-                <Home s_screen={s_screen}/>
+                <Home s_screen={s_screen} />
               </Route>
               <Route path="/about" >
-                <About s_screen={s_screen}/>
+                <About s_screen={s_screen} />
               </Route>
               <Route path="/desk" >
-                <RndDesk s_screen={s_screen}/>
+                <RndDesk s_screen={s_screen} />
               </Route>
               <Route path="/bulletin">
-                <Bulletin/>
+                <Bulletin />
               </Route>
               <Route path="/bday">
-                <BDay s_screen={s_screen}/>
+                <BDay s_screen={s_screen} />
               </Route>
               <Route path="/rnd">
-                <RndPicker s_screen={s_screen}/>
+                <RndPicker s_screen={s_screen} />
+              </Route>
+              <Route path="/list">
+                <Random small={s_screen} />
               </Route>
             </Switch>
             {/*<Home s_screen={s_screen}/>*/}

@@ -6,9 +6,18 @@
   font-weight: normal;
   font-style: normal;
 }
+@font-face {
+  font-family: 'Braille';
+  src: url('./fonts/Braille.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
 .nerd-icons {
   font-family: 'JetBrainsMono Nerd';
   font-size:  2em;
+}
+.braille {
+  font-family: 'SimBraille';
 }
 
 ul {
@@ -112,15 +121,13 @@ button {
   justify-content: space-between;
   padding-block: 1rem;
   margin: 0 auto;
-}
-
-#screen_pad {
   width: 90%;
+
 }
 
 .brand {
   text-decoration: none;
-  width: 28%;
+  /*width: 28%;*/
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -176,11 +183,24 @@ li {
 }
 
 .logo {
-  width: 3rem;
+  width: 3.5rem;
+  object-fit: contain;
+  border-radius: 100%;
+  margin: 0;
+  margin-right: 2em;
+}
+
+#img_circle {
+  border-radius: 100%;
+  background-color: var(--bg2);
+  /*padding: 10px;*/
+  margin: 0;
+  margin-right: 2em;
 }
 
 .name {
-  font-size: 2em;
+  font-size: 2.2em;
+  font-weight: bold;
 }
 
 .content {
@@ -213,7 +233,7 @@ li {
 
 .img-container {
   margin-right: 2em;
-  margin-top: 25px;
+  /*margin-top: 25px;*/
   border-radius: 20px; 
   /*width: 40%;*/
   height: min(600px, 40%)
@@ -310,6 +330,7 @@ li {
   align-items: center;
   justify-content: center;
   margin: 0 20px 20px;
+
 }
 
 #empty-desk {
@@ -320,11 +341,14 @@ li {
   margin: 0 auto 3em;
   height: 120px;
   width: 300px;
+
 }
 
 .desk_img {
   max-width: 120px;
   margin-bottom: .25em;
+  box-shadow: var(--shadow);
+
 }
 
 .rnd_desk {
@@ -366,6 +390,7 @@ main {
   width: min(100%, 1536px);
   padding: 1em 2em;
   margin: 0 auto;
+  margin-bottom: 5%;
 }
 
 .post_form {
@@ -589,4 +614,36 @@ body.light-theme {
   font-size: 1rem;
   /*font-weight: bold;*/
   text-align: center;
+}
+
+.random {
+  background-color: var(--blur_bg);
+  box-sizing: var(--shadow);
+  backdrop-filter: blur(10px);
+  border-radius: 16px;
+  padding: 16px 0;
+  width:30%;
+
+}
+
+.s-random {
+  background-color: var(--blur_bg);
+  box-sizing: var(--shadow);
+  backdrop-filter: blur(10px);
+  border-radius: 16px;
+  padding: 16px 0;
+  width: 80%
+}
+
+.random li {
+  font-size: 24px;
+  text-align: center;
+}
+
+.random-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 80vh;
 }

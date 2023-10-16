@@ -1,4 +1,4 @@
-import logo from "../imgs/logo.png"
+import logo from "../imgs/logo3B.png"
 import { Link } from 'react-router-dom';
 
 //import firebase from 'firebase/app';
@@ -31,10 +31,13 @@ const Header = ({s_screen}) => {
 
     return (
         <header className="header">
-            <nav className="navbar" id={s_screen ? "" : "screen_pad"} >
+            <nav className="navbar" id={s_screen ? "screen_pad" : "screen_pad"} >
                 <Link to="/about" className="brand">
+                    {/*<div id="img_circle">
                         <img className="logo" src={logo} alt=""></img>
-                        { !s_screen && (<p className="name">NotarangeloConsule</p>)}
+                    </div>*/}
+                        <img className="logo" src={logo} alt=""></img>
+                        { !s_screen && (<p className="name">3B App</p>)}
                 </Link>
                 
                 <div id="link_list">
@@ -67,6 +70,11 @@ const Header = ({s_screen}) => {
                                         <p className="nerd-icons pg_icons"></p>
                                     </Link>
                                 </li>
+                                <li>
+                                    <Link className="page_link" to="/list">
+                                        <p className="nerd-icons pg_icons"></p>
+                                    </Link>
+                                </li>
                             </ul>
                         </div>
                         </>)
@@ -87,6 +95,9 @@ const Header = ({s_screen}) => {
                         </Link>
                         <Link className="page_link" to="/bday">
                             <p className="nerd-icons pg_icons"></p>
+                        </Link>
+                        <Link className="page_link" to="/list">
+                            <p className="nerd-icons pg_icons"></p>
                         </Link>
                         </>)
                     }
